@@ -1,0 +1,17 @@
+
+.BANK 0002 SLOT 2
+.ORGA $0000984F
+	call $98AE ;0000984F
+	call $986C ;00009852
+	LD IX,$C118 ;00009855
+	ld b, $0007 ;00009859
+LAB_0002_0000985B:
+	push bc ;0000985B
+	bit 7, [ix+0] ;0000985C
+	call nz, $9ACC ;z_UNTAKEN_JUMP_3 ;00009860
+	ld de, $0020 ;00009863
+	add ix, de ;00009866
+	pop bc ;00009868
+	djnz LAB_0002_0000985B ;z_UNTAKEN_JUMP_2 ;00009869
+	ret ;0000986B
+;stopped writing due to overlap with another section 0000984F

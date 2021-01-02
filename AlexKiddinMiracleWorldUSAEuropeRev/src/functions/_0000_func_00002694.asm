@@ -1,0 +1,23 @@
+
+.BANK 0000 SLOT 0
+.ORGA $00002694
+	ld hl, $C706 ;00002694
+	ld ($C009), hl ;00002697
+	LD   IX,($C0F9) ;0000269A
+	ld a, ($C0F8) ;0000269E
+	ld b, a ;000026A1
+LAB_0000_000026A2:
+	LD   A,(IX+$0000) ;000026A2
+	and $007F ;000026A5
+	jp z, $26C0 ;z_UNTAKEN_JUMP_3 ;000026A7
+	push bc ;000026AA
+	ld hl, $2890 ;000026AB
+	rst $20 ;000026AE
+	LD   A,(IX+$0000) ;000026AF
+	or a ;000026B2
+	z_UNTAKEN_JUMP_3 ;000026B3
+	call $27D0 ;000026B6
+	call $273A ;000026B9
+	call $26D7 ;000026BC
+	pop bc ;000026BF
+;stopped writing due to overlap with another section 00002694

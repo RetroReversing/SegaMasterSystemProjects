@@ -1,0 +1,14 @@
+{
+  "current_state": {
+    "frame": 412,
+    "name": "start"
+  },
+  "last_frame": 412,
+  "name": "Initial Playthrough",
+  "states": [
+    {
+      "frame": 412,
+      "name": "start"
+    }
+  ]
+}
